@@ -9,7 +9,18 @@ firstword_list = [
   "conquest",
   "destiny",
   "realm",
-  "kingdom"
+  "kingdom",
+  "tribe",
+  "heroes",
+  "union",
+  "dynasty",
+  "state",
+  "quest",
+  "battle"
+  "reign",
+  "pinnacle",
+  "legends",
+  "spirit"
 ]
 
 secondword_list = [
@@ -17,13 +28,25 @@ secondword_list = [
   "the lion",
   "dream",
   "heroes",
-  "champions"
+  "champions",
+  "warriors",
+  "power",
+  "nations",
+  "destiny",
+  "superheroes",
+  "heavens",
+  "kings",
+  "horizon",
+  "domination"
 ]
 
 @app.route("/newevent")
 def newevent():
   firstword = random.choice(firstword_list)
-  secondword = random.choice(secondword_list)
+  secondword = firstword
+  while secondword == firstword:
+    secondword = random.choice(secondword_list)
+
   s = "ONE : " + firstword.capitalize() + " of "  + secondword.capitalize()
 
   return s
